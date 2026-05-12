@@ -14,6 +14,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def root():
+    return {"status": "ok", "message": "VMD 3D API is running"}
+
 PIXEL_TO_METER = 0.05
 MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
 
